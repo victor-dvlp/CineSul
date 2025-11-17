@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineSul Premium - Streaming Familiar de Qualidade</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="icon.ico">
+    <script>
+        tailwind.config = {
+            darkMode: 'class', 
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#3b82f6', 
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#0c4a6e', 
+                        },
+                        secondary: {
+                            500: '#10b981', 
+                            600: '#059669',
+                        },
+                        accent: {
+                            500: '#f97316', 
+                            400: '#fb923c',
+                            600: '#ea580c',
+                        },
+                        darkbg: '#111827',
+                        darkcard: '#1f2937'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'] 
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* CORREÇÃO FORÇADA DE OVERFLOW: Garante que o container raiz não exceda a largura */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        @keyframes shake-slow {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-2px); }
+            50% { transform: translateY(2px); }
+            75% { transform: translateY(-1px); }
+        }
+        .animate-shake-slow {
+            animation: shake-slow 3s infinite ease-in-out;
+        }
+    </style>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/feature-card.js"></script>
+    <script src="components/faq-item.js"></script>
+    <script src="components/footer.js"></script>
+</head>
+<body class="font-sans bg-darkbg text-white transition-colors duration-300 overflow-x-hidden"> 
+    
+    <custom-navbar></custom-navbar>
+
+    <section class="relative bg-darkbg py-24 md:py-36 px-4 border-b border-gray-800">
+        <div class="container mx-auto flex flex-col md:flex-row items-center relative z-10">
+            <div class="md:w-1/2 mb-12 md:mb-0 md:pr-16">
+                <span class="inline-block bg-accent-500/20 text-accent-400 px-4 py-1 rounded-full mb-6 font-medium text-sm border border-accent-600">✨ Qualidade e Estabilidade Garantidas</span>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 font-display leading-tight tracking-tight text-white">
+                    O Seu Novo Padrão de <span class="text-primary-500">Entretenimento</span>.
+                </h1>
+                <p class="text-lg md:text-xl mb-10 max-w-lg text-gray-300">
+                    A maior biblioteca de filmes, séries e canais em **resolução 4K** com servidores otimizados para zero travamento.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#planos" class="bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-10 rounded-xl text-base md:text-lg transition-all duration-300 transform hover:scale-[1.03] shadow-lg shadow-accent-500/30 flex items-center justify-center gap-2">
+                        <i data-feather="package" class="fill-current w-5 h-5 md:w-6 md:h-6"></i> Ver Planos e Assinar
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:w-1/2 relative flex justify-center">
+                <div class="w-full max-w-lg bg-gray-900 rounded-3xl shadow-[0_0_80px_rgba(0,0,0,0.5),0_0_20px_rgba(25,90,250,0.4)] border-4 border-primary-500/50 p-3 transform hover:scale-[1.01] transition duration-500">
+                    <video 
+                        class="w-full rounded-2xl" 
+                        poster="http://static.photos/technology/1024x576/42" 
+                        autoplay 
+                        loop 
+                        muted 
+                        playsinline
+                    >
+                        <source src="video.mp4" type="video/mp4">
+                        </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-darkbg px-4 border-b border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4 border-r border-gray-800 last:border-r-0 md:last:border-r md:odd:border-r md:even:border-r last:md:border-r-0">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 font-display text-accent-400">15.000+</div>
+                    <p class="text-gray-400 text-xs sm:text-sm md:text-base">Canais HD & 4K</p>
+                </div>
+                <div class="p-4 border-r border-gray-800 last:border-r-0 md:last:border-r md:odd:border-r md:even:border-r last:md:border-r-0">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 font-display text-accent-400">50.000+</div>
+                    <p class="text-gray-400 text-xs sm:text-sm md:text-base">Filmes e Séries</p>
+                </div>
+                <div class="p-4 border-r border-gray-800 last:border-r-0 md:last:border-r md:odd:border-r md:even:border-r last:md:border-r-0">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 font-display text-accent-400">99.8%</div>
+                    <p class="text-gray-400 text-xs sm:text-sm md:text-base">Estabilidade de Servidores</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-1 font-display text-accent-400">24/7</div>
+                    <p class="text-gray-400 text-xs sm:text-sm md:text-base">Suporte VIP Dedicado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 px-4 bg-darkbg border-b border-gray-800">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-primary-500/20 text-primary-400 px-4 py-1 rounded-full mb-4 font-medium text-sm border border-primary-600">💪 Por Que Somos Melhores?</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display text-white">
+                    Tecnologia Que <span class="text-secondary-500">Transforma Sua TV</span>
+                </h2>
+                <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
+                    Focamos em qualidade técnica e na experiência do usuário para você nunca mais travar.
+                </p>
+                <img src="andrey-matveev-eEpNhVL30Qg-unsplash.jpg">
+            </div>
+        </div>
+    </section>
+
+    <section id="planos" class="py-24 px-4 bg-darkbg border-b border-gray-800">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-accent-500/20 text-accent-400 px-4 py-1 rounded-full mb-4 font-medium text-sm border border-accent-600">💰 Planos & Preços</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display text-white">
+                    Simples, Sem Fidelidade e <span class="text-primary-500">Com Grande Economia</span>
+                </h2>
+                <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
+                    Escolha a melhor frequência de pagamento e economize o máximo no longo prazo.
+                </p>
+            </div>
+            
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    
+                    <div class="bg-darkcard rounded-2xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-500 h-full flex flex-col border border-gray-700 p-8">
+                        <div class="flex-grow">
+                            <h3 class="text-2xl md:text-3xl font-bold mb-2 text-white">Mensal</h3>
+                            <p class="text-gray-400 text-sm md:text-base mb-6">Comece agora e cancele quando quiser.</p>
+                            
+                            <div class="mb-8">
+                                <span class="text-5xl md:text-6xl font-extrabold text-primary-500">R$29,90</span>
+                                <span class="text-gray-400 text-base md:text-xl">/mês</span>
+                            </div>
+
+                            <ul class="space-y-4 text-base md:text-lg">
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> 1 Conexão Simultânea</li>
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> Acesso Total (Canais e VOD)</li>
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> Qualidade HD/Full HD</li>
+                                <li class="flex items-start text-gray-500 opacity-60"><i data-feather="x" class="text-gray-600 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> Suporte Prioritário</li>
+                                <li class="flex items-start text-gray-500 opacity-60"><i data-feather="x" class="text-gray-600 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> Apenas 1 tela 4K</li>
+                            </ul>
+                        </div>
+                        <div class="pt-8">
+                            <a href="https://wa.me/55996308576" class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center font-bold py-4 px-6 rounded-xl text-lg transition duration-300 shadow-lg flex items-center justify-center gap-2">
+                                <i data-feather="send" class="w-6 h-6"></i> Assinar Mensal
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-darkcard rounded-2xl shadow-2xl overflow-hidden transform hover:scale-[1.05] transition duration-500 border-4 border-secondary-500 relative h-full flex flex-col p-8">
+                        <div class="absolute top-0 right-0 bg-secondary-500 text-gray-900 px-5 py-2 rounded-bl-xl font-extrabold text-xs sm:text-sm transform translate-y-[-1px]">⭐ MELHOR OFERTA</div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl md:text-3xl font-bold mb-2 text-white">Semestral</h3>
+                            <p class="text-gray-400 text-sm md:text-base mb-6">Nosso plano mais popular e com grande economia.</p>
+                            
+                            <div class="mb-8">
+                                <p class="text-sm md:text-base text-secondary-400 font-extrabold mb-1 uppercase">Economize R$179,50 (44%)</p>
+                                <span class="text-5xl md:text-6xl font-extrabold text-secondary-500">R$99,90</span>
+                                <span class="text-gray-400 text-base md:text-xl">/6 meses</span>
+                            </div>
+
+                            <ul class="space-y-4 text-base md:text-lg">
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> **2 Conexões Simultâneas**</li>
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> Acesso Total (Canais e VOD)</li>
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> **Qualidade 4K HDR**</li>
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> Suporte Prioritário</li>
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> 2 Telas 4K (Principais)</li>
+                            </ul>
+                        </div>
+                        <div class="pt-8">
+                            <a href="https://wa.me/55996308576" class="block w-full bg-secondary-500 hover:bg-secondary-600 text-gray-900 text-center font-extrabold py-4 px-6 rounded-xl text-xl transition duration-300 shadow-xl shadow-secondary-500/50 flex items-center justify-center gap-2">
+                                <i data-feather="zap" class="w-6 h-6 fill-current"></i> Escolher Semestral
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-darkcard rounded-2xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-500 h-full flex flex-col border border-gray-700 p-8">
+                        <div class="flex-grow">
+                            <h3 class="text-2xl md:text-3xl font-bold mb-2 text-white">Anual</h3>
+                            <p class="text-gray-400 text-sm md:text-base mb-6">Maximize sua economia e telas com o plano top.</p>
+                            
+                            <div class="mb-8">
+                                <p class="text-sm md:text-base text-accent-400 font-extrabold mb-1 uppercase">Economize R$458,90 (56%)</p>
+                                <span class="text-5xl md:text-6xl font-extrabold text-accent-500">R$139,90</span>
+                                <span class="text-gray-400 text-base md:text-xl">/ano</span>
+                            </div>
+
+                            <ul class="space-y-4 text-base md:text-lg">
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> **4 Conexões Simultâneas**</li>
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> Catálogo Completo em 4K</li>
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> Suporte VIP Dedicado (24/7)</li>
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> 4 Telas 4K (Toda a Família)</li>
+                                <li class="flex items-start text-gray-300"><i data-feather="check" class="text-secondary-500 mr-3 mt-1 w-5 h-5 md:w-6 md:h-6"></i> Garantia Estendida de Estabilidade</li>
+                            </ul>
+                        </div>
+                        <div class="pt-8">
+                            <a href="https://wa.me/55996308576" class="block w-full bg-accent-500 hover:bg-accent-600 text-white text-center font-bold py-4 px-6 rounded-xl text-lg transition duration-300 shadow-lg flex items-center justify-center gap-2">
+                                <i data-feather="award" class="w-6 h-6"></i> Assinar Anual
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-20 px-4 bg-darkbg border-b border-gray-800">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-secondary-500/20 text-secondary-400 px-4 py-1 rounded-full mb-4 font-medium text-sm border border-secondary-600">💜 Opinião de Clientes</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display text-white">
+                    Quem Assina <span class="text-accent-500">Aprova!</span>
+                </h2>
+                <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
+                    Veja as experiências de quem já transformou o entretenimento de casa.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-darkcard p-6 rounded-xl shadow-xl border border-gray-700 hover:border-primary-500 transition duration-300">
+                    <i data-feather="message-square" class="text-primary-500 w-8 h-8 mb-4"></i>
+                    <p class="text-gray-300 mb-6 italic text-base">"A qualidade da imagem nos jogos de futebol é inacreditável! Nunca mais perdi um lance com travamentos. O CINESUL é nota 10."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Foto de André Souza" class="w-12 h-12 rounded-full mr-4 border-2 border-primary-500 object-cover">
+                        <div>
+                            <p class="font-bold text-white">André Souza</p>
+                            <p class="text-sm text-primary-300">Apaixonado por Futebol</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-darkcard p-6 rounded-xl shadow-xl border border-gray-700 hover:border-secondary-500 transition duration-300">
+                    <i data-feather="heart" class="text-secondary-500 w-8 h-8 mb-4"></i>
+                    <p class="text-gray-300 mb-6 italic text-base">"Finalmente um serviço que agrada a todos em casa. As crianças assistem desenhos, e nós assistimos nossos filmes em 4K. Recomendo para todas as famílias!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Foto de Mariana Lima" class="w-12 h-12 rounded-full mr-4 border-2 border-secondary-500 object-cover">
+                        <div>
+                            <p class="font-bold text-white">Mariana Lima</p>
+                            <p class="text-sm text-secondary-300">Mãe e Cinéfila</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-darkcard p-6 rounded-xl shadow-xl border border-gray-700 hover:border-accent-500 transition duration-300">
+                    <i data-feather="zap" class="text-accent-500 w-8 h-8 mb-4"></i>
+                    <p class="text-gray-300 mb-6 italic text-base">"O suporte 24/7 é realmente VIP. Tive uma dúvida às 3h da manhã e fui atendido em 2 minutos. A estabilidade dos canais é a melhor do mercado."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Foto de Lucas Oliveira" class="w-12 h-12 rounded-full mr-4 border-2 border-accent-500 object-cover">
+                        <div>
+                            <p class="font-bold text-white">Lucas Oliveira</p>
+                            <p class="text-sm text-accent-300">Entusiasta de Tecnologia</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-darkcard p-6 rounded-xl shadow-xl border border-gray-700 hover:border-primary-500 transition duration-300">
+                    <i data-feather="globe" class="text-primary-500 w-8 h-8 mb-4"></i>
+                    <p class="text-gray-300 mb-6 italic text-base">"Levei o CINESUL para minha viagem e funcionou perfeitamente no hotel, sem travamentos. A estabilidade é surreal, mesmo fora de casa. É o melhor companheiro de viagem!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="Foto de Paulo Roberto" class="w-12 h-12 rounded-full mr-4 border-2 border-primary-500 object-cover">
+                        <div>
+                            <p class="font-bold text-white">Paulo Roberto</p>
+                            <p class="text-sm text-primary-300">Aventureiro e Viajante</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-darkcard p-6 rounded-xl shadow-xl border border-gray-700 hover:border-secondary-500 transition duration-300">
+                    <i data-feather="users" class="text-secondary-500 w-8 h-8 mb-4"></i>
+                    <p class="text-gray-300 mb-6 italic text-base">"O plano anual é o mais vantajoso! Com 4 telas, meus filhos podem assistir em seus quartos enquanto eu assisto minha série na sala. Ótimo custo-benefício e excelente qualidade 4K."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Foto de Cláudia Ferreira" class="w-12 h-12 rounded-full mr-4 border-2 border-secondary-500 object-cover">
+                        <div>
+                            <p class="font-bold text-white">Cláudia Ferreira</p>
+                            <p class="text-sm text-secondary-300">Professora e Assinante Anual</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-darkcard p-6 rounded-xl shadow-xl border border-gray-700 hover:border-accent-500 transition duration-300">
+                    <i data-feather="film" class="text-accent-500 w-8 h-8 mb-4"></i>
+                    <p class="text-gray-300 mb-6 italic text-base">"O catálogo VOD (Filmes e Séries) é atualizado constantemente. Sempre tem algo novo em destaque e a interface é muito rápida na minha Smart TV. Adorei o serviço!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Foto de Ricardo Mendes" class="w-12 h-12 rounded-full mr-4 border-2 border-accent-500 object-cover">
+                        <div>
+                            <p class="font-bold text-white">Ricardo Mendes</p>
+                            <p class="text-sm text-accent-300">Entusiasta de Séries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 px-4 bg-primary-700 text-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 font-display">
+                Pronto para Elevar Seu Entretenimento?
+            </h2>
+            <p class="text-lg md:text-xl mb-10 font-light max-w-3xl mx-auto text-primary-100">
+                Seu acesso completo ao melhor streaming está a apenas um clique.
+            </p>
+            <a href="#planos" class="inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-12 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl shadow-accent-500/50 uppercase tracking-wider flex items-center justify-center gap-3 mx-auto max-w-sm animate-shake-slow">
+                <i data-feather="arrow-right-circle" class="w-5 h-5 md:w-6 md:h-6"></i> Eu Quero Assinar!
+            </a>
+            <p class="mt-4 text-sm opacity-80 text-primary-200">30 Dias de Garantia | Assinatura Segura.</p>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script>
+        feather.replace();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
